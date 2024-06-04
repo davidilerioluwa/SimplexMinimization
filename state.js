@@ -1,7 +1,8 @@
 import { proxy } from "valtio";
 
 const state= proxy({
-    solution:[]
+    solution:[],
+    numberOfConstraints:2
 })
 
 export default state

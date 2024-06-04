@@ -11,9 +11,9 @@ function App() {
   return (
     <>
       <Input/>
-      <div className='flex flex-col mt-4 gap-4'>
+      <div className='flex flex-col items-center mt-4 gap-4'>
          {snap.solution.length >0?snap.solution.map((iteration,index)=><SimplexTable i={index} />):""}
-         {snap.solution.length>0?<p>Therefore, the total profit can be calculated as <span className='text-dblue font-bold'>{snap.solution[snap.solution.length-1].profit}</span></p>:""}
+         {snap.solution.length>0?<p>All values of cj-zj are above zero. Therefore, the solution can be calculated as <span className='text-dblue font-bold'>{snap.solution[snap.solution.length-1].profit}</span></p>:""}
           
       </div>
     </>

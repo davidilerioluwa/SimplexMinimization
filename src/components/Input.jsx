@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import Simplex from '../../simplex'
 import state from '../../state'
+import { useSnapshot } from 'valtio'
 
 const Input = (simplexSolver) => {
-    const [numberOfConstraints,setNumberOfConstraints] = useState(3)
+    const [numberOfConstraints,setNumberOfConstraints] = useState(2)
+    const snap =useSnapshot(state)
     const [values,setValues]= useState({
         ox1: 0,
         ox2:"",
@@ -69,6 +71,7 @@ const Input = (simplexSolver) => {
                   const solution=  Simplex(values,numberOfConstraints)
                   console.log(solution);
                     state.solution=solution
+                    state.numberOfConstraints= numberOfConstraints
             }}  >Solve</button>
         </form>
     </div>

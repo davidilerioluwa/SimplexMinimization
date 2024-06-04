@@ -15,7 +15,7 @@ for (let j = 1; j <= cj.length; j++) {
   dj.push(d)
 }
 
-// to check for all dj<=0, we count how many values of dj are below zero
+// to check for all dj>=0, we count how many values of dj are below zero
 let count = 0
 let optimal = false
 for (let j = 1; j <= dj.length; j++) {
@@ -29,11 +29,8 @@ console.log(dj);
 // it is optimal when the total length of the dj is below zero, that is all values of dj are below zero
 if(count == dj.length){
     optimal= true
-    // console.log(count);
-    // console.log(dj);
 
 }
-// console.log(dj);
 return({
     dj: dj,
     optimal: optimal
