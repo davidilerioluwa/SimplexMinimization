@@ -35,21 +35,31 @@ function Simplex (values,numberOfconstraints){
         // the values are reassigned to the actual input
         // the coefficient of the objective function are negated if they are positive(greater than zero)
         // note: we used ox1 to represent "x1 value of the objective function or directly read as objective x1"
-         if(values.ox1>0){
-            ox1= -values.ox1
-         }else{
+        //  if(values.ox1>0){
+        //     ox1= -values.ox1
+        //  }else{
+        //     ox1= values.ox1
+        //  }
+        //  if(values.ox2>0){
+        //     ox2 = -values.ox2
+        //  }else{
+        //     ox2= values.ox2
+        //  }
+        //  if(values.ox3>0){
+        //     ox3= -values.ox3
+        //  }else{
+        //     ox3= values.ox3
+        //  }
+        if(values.ox1<0 & values.ox2<0 & values.ox1<=0){
             ox1= values.ox1
-         }
-         if(values.ox2>0){
-            ox2 = -values.ox2
-         }else{
-            ox2= values.ox2
-         }
-         if(values.ox3>0){
-            ox3= -values.ox3
-         }else{
+            ox2 = values.ox2
             ox3= values.ox3
-         }
+        }else{
+           
+            ox1= -values.ox1
+            ox2 = -values.ox2
+            ox3= -values.ox3
+        }
          c1x1= values.c1x1
          c1x2= values.c1x2
          c1x3= values.c1x3
